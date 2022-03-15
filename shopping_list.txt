@@ -1,5 +1,6 @@
 CocaCola x 2
 Pepsi x 5
 Snickers x 6
-Mars x 8
-Doritos x 11
+Marsovci x 8
+Doritos x 10
+Popkek x 12
