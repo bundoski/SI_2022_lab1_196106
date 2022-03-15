@@ -1,5 +1,5 @@
-CocaCola
-Pepsi
-Snickers
-Mars
-Doritos
+CocaCola x 2
+Pepsi x 4
+Snickers x 6
+Mars x 8
+Doritos x 10
