@@ -1,0 +1,145 @@
+# so touch shopping_list.txt napraviv tekstualna datoteka vo git bash
+# iskoristuvam git add . i git commit -m dva pati za dodavanje na proizvodi,
+# a vtoriot pat za dodavanje kvantitet na istite.
+
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git log
+commit cf10ed7af1e1b4c8c25eff1a0b89930a1bd1a310 (HEAD -> master, branch2, branch1)
+Author: Dzulijano Bundoski <bdzulijano@yahoo.com>
+Date:   Tue Mar 15 17:33:17 2022 +0100
+
+    Add quantities to the items
+
+commit 9ab1303eb39879e5e965f2c3b22b557d702044b0
+Author: Dzulijano Bundoski <bdzulijano@yahoo.com>
+Date:   Tue Mar 15 17:32:32 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit a5c5f89c255fb7816382ad8d7789192141f135a1 (origin/master, origin/HEAD)
+Author: bundoski <93097556+bundoski@users.noreply.github.com>
+Date:   Tue Mar 15 17:31:13 2022 +0100
+
+    Update README.md
+
+commit ef0bbf1ff9293a296faca395168b6b83785f308c
+Author: bundoski <93097556+bundoski@users.noreply.github.com>
+Date:   Tue Mar 15 17:30:58 2022 +0100
+
+    Initial commit
+(END)
+
+# so git branch kreirav 2 granki, branch1 i branch2, gi sinhronizirav site granki so
+# git push , se prefrliv vo grankata branch1 so git checkout branch1 za da napravam promeni,
+# se vrativ na master so git checkout master za da napravam promeni na master, i sega
+# pravam promeni na grankata branch2.
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 658 bytes | 658.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bundoski/SI_2022_lab1_196106.git
+   a5c5f89..cf10ed7  master -> master
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (branch1)
+$ git add .
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (branch1)
+$ git commit -m "Change quantity of item #5"
+[branch1 46c8450] Change quantity of item #5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git add .
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git commit -m "Change quantity of item #2"
+[master 8b4c129] Change quantity of item #2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 354 bytes | 354.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bundoski/SI_2022_lab1_196106.git
+   cf10ed7..8b4c129  master -> master
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (branch2)
+$ git log
+commit cf10ed7af1e1b4c8c25eff1a0b89930a1bd1a310 (HEAD -> branch2)
+Author: Dzulijano Bundoski <bdzulijano@yahoo.com>
+Date:   Tue Mar 15 17:33:17 2022 +0100
+
+    Add quantities to the items
+
+commit 9ab1303eb39879e5e965f2c3b22b557d702044b0
+Author: Dzulijano Bundoski <bdzulijano@yahoo.com>
+Date:   Tue Mar 15 17:32:32 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit a5c5f89c255fb7816382ad8d7789192141f135a1
+Author: bundoski <93097556+bundoski@users.noreply.github.com>
+Date:   Tue Mar 15 17:31:13 2022 +0100
+
+    Update README.md
+
+commit ef0bbf1ff9293a296faca395168b6b83785f308c
+Author: bundoski <93097556+bundoski@users.noreply.github.com>
+Date:   Tue Mar 15 17:30:58 2022 +0100
+
+    Initial commit
+(END)
+
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git merge branch1
+Auto-merging shopping_list.txt
+Merge made by the 'ort' strategy.
+ shopping_list.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Sadstro@DESKTOP-UJDHNKI MINGW64 ~/Desktop/SI_2022_lab1_196106 (master)
+$ git merge branch2
+Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+# Otkako ja spoiv branch1 naidov na konflikt pri probuvanje da napravam spojuvanje
+# na branch2 kon master, koe shto go resiv so toa sto go otvoriv fajlot lokalno 
+# i odluciv da gi zacuvam promenite koi sto branch2 saka da gi napravi, a gi izbrisav promenite
+# sto ne sakav da ostanat, t.e go ostaviv branch2 da gi zadrzi promenata na proizvodot #4
+# i da go zadrzi dodavanjeto na proizvod #6. 
+# so toa go resiv konfliktot i uspesno go spoiv branch2 so master.
+# Posle spojuvanjeto, go zacuvuvam fajlov vo koj sto dokumentiram, so git add . i git commit -m "Add docs" 
+# se osiguram deka ke bide dodaden, i na kraj pravam sinhronizacija so git push, so shto zavrsuvam so vezbata. (:
+
+
+
+
+
+
+
